@@ -3,28 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game Store</title>
+  <title>Assassin's Creed Game Store</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* General Styles */
+    /* Global Styles */
     body {
       background-color: #111;
       color: white;
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
+      overflow-x: hidden;
     }
 
     header {
+      background-color: #222;
       text-align: center;
       padding: 50px;
-      background-color: #222;
     }
 
+    /* Assassin's Creed Binary Logo */
     .logo-container {
       position: relative;
       text-align: center;
       margin-bottom: 30px;
+    }
+
+    .binary-logo {
+      font-family: monospace;
+      font-size: 18px;
+      color: #0f0;
+      letter-spacing: 2px;
+      line-height: 1.5;
+      animation: binaryAnim 5s infinite;
+      white-space: nowrap;
+    }
+
+    @keyframes binaryAnim {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
     }
 
     .logo-text {
@@ -34,61 +55,36 @@
       text-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
     }
 
-    .binary-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/4/4c/Assassin%27s_Creed_logo.svg') no-repeat center center;
-      background-size: contain;
-      animation: binaryAnim 5s infinite;
-      opacity: 0.4;
+    /* Navigation Bar */
+    nav {
+      background-color: #222;
+      padding: 10px 20px;
+      text-align: center;
     }
 
-    .binary-code {
-      font-size: 12px;
-      color: #0f0;
-      letter-spacing: 2px;
-      line-height: 1.5;
-      animation: scrollBinary 1s linear infinite;
-      white-space: nowrap;
-      z-index: 2;
-      position: relative;
+    nav a {
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 18px;
     }
 
-    @keyframes binaryAnim {
-      0% {
-        background-position: 0 0;
-      }
-      100% {
-        background-position: 100% 100%;
-      }
+    nav a:hover {
+      background-color: #444;
     }
 
-    @keyframes scrollBinary {
-      0% {
-        transform: translateY(0);
-      }
-      100% {
-        transform: translateY(-100%);
-      }
-    }
-
-    .game-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    /* Games Tab */
+    .games-container {
       padding: 20px;
+      text-align: center;
     }
 
     .game-card {
       width: 200px;
       margin: 10px;
+      display: inline-block;
       background-color: #333;
       border-radius: 8px;
-      overflow: hidden;
-      text-align: center;
       box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
       transition: transform 0.3s ease;
     }
@@ -101,6 +97,7 @@
       width: 100%;
       height: 120px;
       object-fit: cover;
+      border-radius: 8px 8px 0 0;
     }
 
     .game-info {
@@ -131,25 +128,38 @@
     .download-link:hover {
       background-color: #00e600;
     }
+
+    /* Footer */
+    footer {
+      background-color: #222;
+      text-align: center;
+      padding: 10px;
+      margin-top: 50px;
+    }
   </style>
 </head>
 <body>
 
   <header>
     <div class="logo-container">
-      <!-- Assassin's Creed Logo with Binary Effect -->
-      <div class="logo-text">
-        Assassin's Creed Game Store
-      </div>
-      <div class="binary-background"></div>
-      <div class="binary-code">
+      <div class="logo-text">Assassin's Creed Game Store</div>
+      <!-- Binary Code for Logo -->
+      <div class="binary-logo">
         01001001 01010011 01010011 01000011 01010010 01000101 01000101 01000100 01010101 01010000 01000001 01000100 01000101 01010000 01010101 01010000 01000101 01010001
       </div>
     </div>
   </header>
 
-  <section class="game-grid">
-    <!-- Example Game Cards -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Games</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- Games Section -->
+  <section class="games-container">
+    <h2>Top 10 Games</h2>
     <div class="game-card">
       <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/DOOM_Eternal_cover_art.jpg" alt="DOOM Eternal">
       <div class="game-info">
@@ -168,8 +178,32 @@
       </div>
     </div>
 
-    <!-- Add more game cards here -->
+    <!-- Repeat similar blocks for 10 games -->
+    <div class="game-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Red_Dead_Redemption_2_cover_art.jpg" alt="Red Dead Redemption 2">
+      <div class="game-info">
+        <h3>Red Dead Redemption 2</h3>
+        <p>A stunning open-world game set in the Wild West.</p>
+        <a href="#" class="download-link">Download</a>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Assassin%27s_Creed_Valhalla_cover.jpg" alt="Assassin's Creed Valhalla">
+      <div class="game-info">
+        <h3>Assassin's Creed Valhalla</h3>
+        <p>Vikings, raids, and epic adventures await!</p>
+        <a href="#" class="download-link">Download</a>
+      </div>
+    </div>
+
+    <!-- Add more games as needed -->
+
   </section>
+
+  <footer>
+    <p>&copy; 2025 Assassin's Creed Game Store</p>
+  </footer>
 
 </body>
 </html>
