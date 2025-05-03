@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PixelDrop - Free Game Downloads</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00ffc3;
+      --bg: #0e0e0e;
+      --card: #1a1a1a;
+      --hover: #00ffcc;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg);
+      color: #fff;
+    }
+
+    header {
+      background: linear-gradient(to right, #0f0f0f, #1c1c1c);
+      padding: 2rem;
+      text-align: center;
+      font-size: 2.5rem;
+      color: var(--primary);
+      box-shadow: 0 2px 10px #000;
+      letter-spacing: 1px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .game-card {
+      background: var(--card);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,255,200,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .game-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 25px rgba(0,255,200,0.3);
+    }
+
+    .game-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .info {
+      padding: 1.2rem;
+    }
+
+    .info h3 {
+      margin: 0;
+      font-size: 1.4rem;
+      color: var(--primary);
+    }
+
+    .info p {
+      font-size: 0.95rem;
+      color: #bbb;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin-right: 0.6rem;
+      padding: 0.5rem 1rem;
+      background: var(--primary);
+      color: #000;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+
+    .buttons a:hover {
+      background: var(--hover);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: #888;
+      font-size: 0.9rem;
+      border-top: 1px solid #222;
+    }
+
+    @media (max-width: 500px) {
+      header {
+        font-size: 1.8rem;
+      }
+      .info h3 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>🎮 PixelDrop</header>
+
+  <section class="hero">
+    <h2>Find & Download Free Games</h2>
+    <p>PixelDrop brings you hand-picked, freely available PC games. Download directly or via torrent. No ads. No BS.</p>
+  </section>
+
+  <div class="container">
+
+    <div class="game-card">
+      <img src="https://via.placeholder.com/400x200?text=Cyber+Rush" alt="Cyber Rush Game">
+      <div class="info">
+        <h3>Cyber Rush</h3>
+        <p>High-speed sci-fi racing game with futuristic visuals.</p>
+        <div class="buttons">
+          <a href="#">Direct Download</a>
+          <a href="#">Torrent</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://via.placeholder.com/400x200?text=Pixel+Survivor" alt="Pixel Survivor Game">
+      <div class="info">
+        <h3>Pixel Survivor</h3>
+        <p>2D zombie survival shooter with retro vibes.</p>
+        <div class="buttons">
+          <a href="#">Direct Download</a>
+          <a href="#">Torrent</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img src="https://via.placeholder.com/400x200?text=Sky+Front" alt="Sky Front Game">
+      <div class="info">
+        <h3>Sky Front</h3>
+        <p>First-person jetpack battle in zero gravity arenas.</p>
+        <div class="buttons">
+          <a href="#">Direct Download</a>
+          <a href="#">Torrent</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add more games as needed -->
+
+  </div>
+
+  <footer>
+    © 2025 PixelDrop — All games shared are legal and free.
+  </footer>
+
+</body>
+</html>
