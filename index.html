@@ -1,151 +1,95 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PixelDrop - Game Store</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PixelDrop - Game Library</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <style>
-    :root {
-      --bg-dark: #1b1f23;
-      --bg-card: #2a2f35;
-      --highlight: #1a9fff;
-      --text-light: #d6dce5;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-
     body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-light);
+      font-family: 'Orbitron', sans-serif;
+      background-color: #101820;
+      color: #e0e0e0;
+      overflow-x: hidden;
     }
-
     header {
-      background: #171a1f;
-      padding: 1rem 2rem;
+      background: #1a1f2e;
+      padding: 1.2rem 2rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid #333;
+      align-items: center;
+      border-bottom: 2px solid #0ff;
     }
-
     header h1 {
-      font-size: 1.8rem;
-      color: var(--highlight);
-      margin: 0;
+      font-size: 2rem;
+      color: #0ff;
     }
-
     nav a {
       margin-left: 1.5rem;
       text-decoration: none;
-      color: var(--text-light);
-      font-weight: 600;
+      color: #aaa;
       transition: color 0.3s;
     }
-
     nav a:hover {
-      color: var(--highlight);
+      color: #0ff;
     }
-
     .hero {
-      background: url('https://via.placeholder.com/1400x400?text=Featured+Game') center/cover no-repeat;
-      height: 400px;
-      display: flex;
-      align-items: flex-end;
-      padding: 2rem;
-      color: #fff;
+      background: linear-gradient(145deg, #0f2027, #203a43);
+      padding: 3rem 2rem;
+      text-align: center;
     }
-
     .hero h2 {
-      font-size: 2.5rem;
-      background: rgba(0,0,0,0.6);
-      padding: 1rem;
-      border-radius: 8px;
+      font-size: 2.8rem;
+      color: #0ff;
+      margin-bottom: 1rem;
     }
-
-    .section-title {
-      font-size: 1.5rem;
-      margin: 2rem 2rem 1rem;
-      color: var(--highlight);
+    .hero p {
+      font-size: 1.2rem;
+      color: #ccc;
     }
-
     .game-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      padding: 0 2rem 3rem;
+      padding: 2rem;
     }
-
     .game-card {
-      background: var(--bg-card);
+      background: #1a1f2e;
       border-radius: 10px;
       overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
     }
-
     .game-card:hover {
       transform: scale(1.03);
-      box-shadow: 0 0 20px rgba(26, 159, 255, 0.4);
     }
-
     .game-card img {
       width: 100%;
-      height: 160px;
+      height: 180px;
       object-fit: cover;
     }
-
     .game-info {
       padding: 1rem;
     }
-
     .game-info h3 {
-      margin: 0 0 0.5rem;
-      font-size: 1.2rem;
-      color: #fff;
+      margin-bottom: 0.5rem;
+      color: #0ff;
     }
-
     .game-info p {
       font-size: 0.9rem;
-      color: #aaa;
+      color: #bbb;
     }
-
-    .game-info .buttons {
-      margin-top: 1rem;
-    }
-
-    .buttons a {
-      display: inline-block;
-      padding: 0.4rem 0.8rem;
-      margin-right: 0.5rem;
-      background: var(--highlight);
-      color: #000;
-      border-radius: 6px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
     footer {
       text-align: center;
-      padding: 1.5rem;
-      color: #777;
-      border-top: 1px solid #333;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 600px) {
-      .hero h2 {
-        font-size: 1.6rem;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        margin-top: 1rem;
-      }
+      padding: 2rem;
+      background: #0d1117;
+      color: #555;
     }
   </style>
 </head>
@@ -155,61 +99,48 @@
     <h1>🎮 PixelDrop</h1>
     <nav>
       <a href="#">Home</a>
-      <a href="#">Top Games</a>
       <a href="#">Categories</a>
-      <a href="#">Support</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
     </nav>
   </header>
 
-  <div class="hero">
-    <h2>🔥 Featured: Cyber Rush DX</h2>
+  <div class="hero" data-aos="zoom-in">
+    <h2>Welcome to PixelDrop</h2>
+    <p>Your ultimate hub for downloading compressed games</p>
   </div>
 
-  <div class="section-title">Browse Games</div>
-
-  <div class="game-grid">
-
-    <div class="game-card">
-      <img src="https://via.placeholder.com/400x200?text=Cyber+Rush" alt="Cyber Rush">
+  <section class="game-grid">
+    <!-- Placeholder for 100 games (start inserting real game cards later) -->
+    <div class="game-card" data-aos="fade-up">
+      <img src="https://via.placeholder.com/400x200?text=Game+Title" alt="Game 1">
       <div class="game-info">
-        <h3>Cyber Rush DX</h3>
-        <p>Futuristic racing in neon-lit cities. Ultra fast and free!</p>
-        <div class="buttons">
-          <a href="#">Download</a>
-          <a href="#">Torrent</a>
-        </div>
+        <h3>Game Title 1</h3>
+        <p>FitGirl-style compressed release with repack notes and crack included.</p>
       </div>
     </div>
 
-    <div class="game-card">
-      <img src="https://via.placeholder.com/400x200?text=Pixel+Survivor" alt="Pixel Survivor">
+    <div class="game-card" data-aos="fade-up">
+      <img src="https://via.placeholder.com/400x200?text=Game+Title" alt="Game 2">
       <div class="game-info">
-        <h3>Pixel Survivor</h3>
-        <p>Survive pixelated zombie hordes in retro glory.</p>
-        <div class="buttons">
-          <a href="#">Download</a>
-          <a href="#">Torrent</a>
-        </div>
+        <h3>Game Title 2</h3>
+        <p>Highly compressed. Original game files included. Ready to play.</p>
       </div>
     </div>
 
-    <div class="game-card">
-      <img src="https://via.placeholder.com/400x200?text=Sky+Front" alt="Sky Front">
-      <div class="game-info">
-        <h3>Sky Front</h3>
-        <p>Jetpack battles in zero gravity. Multiplayer FPS.</p>
-        <div class="buttons">
-          <a href="#">Download</a>
-          <a href="#">Torrent</a>
-        </div>
-      </div>
-    </div>
+    <!-- Add 98 more game cards like above -->
 
-  </div>
+  </section>
 
   <footer>
-    © 2025 PixelDrop. All content shared is legal and free. Steam-like UI design for educational purposes only.
+    © 2025 PixelDrop. All games are compressed and listed for educational purposes.
   </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+  </script>
 
 </body>
 </html>
+
